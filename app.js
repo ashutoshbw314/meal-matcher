@@ -20,20 +20,20 @@ class MealAPI {
                             meal[strIngredientN]);
   }
 
-  // To save bandwidth and time it finds a meal from cached meals
+  // To save bandwidth and time it finds a meal from cached meals by it's id
   getCachedMealById(id) {
     return this.mealsCache.filter(meal => meal.idMeal == id)[0] || null;
   }
 }
 
-// A class for drawing doms easily
+// A class for drawing meal related DOM objects easily
 class MealDrawingEngine {
   constructor(mealContainer, ingredientsContainer) {
     this.mealsContainer = mealContainer;
     this.ingredientsContainer = ingredientsContainer;
   }
 
-  // Give it fetched and parsed JSON and it will draw meals
+  // Give it the fetched and parsed JSON and it will draw meals
   showMeals(meals) {
     this.mealsContainer.innerHTML = "";
     this.mealsContainer.innerHTML = `
