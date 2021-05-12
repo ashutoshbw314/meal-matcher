@@ -4,7 +4,7 @@ class MealAPI {
     this.mealsCache = [];
   }
 
-  // searches for a meal
+  // Searches for a meal
   async searchMeals(mealName) {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(mealName)}`);
     const data = await response.json();
